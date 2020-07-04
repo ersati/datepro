@@ -33,7 +33,7 @@
 const date2 = "03/23/20";
 const formatDate2 = "MM/DD/YY";
 
-function cutDate(fulldate, formatdate, char) {
+let year = function cutDate(fulldate, formatdate, char) {
   const sliceDate = fulldate.split(findSeparator(fulldate));
   const sliceFormat = formatdate.split(findSeparator(formatdate));
   let idx;
@@ -41,12 +41,13 @@ function cutDate(fulldate, formatdate, char) {
     if (el.includes(char)) {
       return (idx = index);
     }
+    return sliceDate[idx];
   });
 
   console.log(fulldate, sliceDate[idx], sliceFormat, newFormat, idx);
 
   return;
-}
+};
 console.log(cutDate(date2, formatDate2, "D"));
 
 function findSeparator(formatstring) {
