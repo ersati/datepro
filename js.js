@@ -1,5 +1,3 @@
-// Stwórz klasę DatePro, która pozwala na łatwą operację na datach w różnych formatach
-
 class DatePro {
   constructor(dateAsString, inputDateFormat = "DD.MM.YYYY") {
     this.year = this.splitDate(dateAsString, inputDateFormat, "Y");
@@ -59,8 +57,6 @@ class DatePro {
   }
 }
 
-// // to powinno zadziałać:
-
 const date1 = "23.03";
 const formatDate1 = "DD.MM";
 const instance1 = new DatePro(date1, formatDate1);
@@ -76,60 +72,3 @@ const instance3 = new DatePro(date3, formatDate3);
 instance1.format(); // '23.03.2020'
 instance2.format(); // '23.03.2020'
 instance3.format(); // '23.03.2020'
-
-// const date2 = "03/23/2023";
-// const formatDate2 = "MM/DD/YY";
-
-// let month = cutDate(date2, formatDate2, "M");
-// let day = cutDate(date2, formatDate2, "D");
-
-// function cutDate(fulldate, formatdate, char) {
-//   const sliceDate = fulldate.split(findSeparator(fulldate));
-//   const sliceFormat = formatdate.split(findSeparator(formatdate));
-//   let idx;
-//   const newFormat = sliceFormat.forEach((el, index) => {
-//     if (el.includes(char)) {
-//       return (idx = index);
-//     }
-//   });
-
-//   console.log(fulldate, sliceDate[idx], sliceFormat, newFormat, idx);
-
-//   return sliceDate[idx];
-// }
-// console.log(cutDate(date2, formatDate2, "D"));
-
-// function findSeparator(formatstring) {
-//   //   console.log(formatstring.includes("-"));
-//   if (formatstring.includes(".")) {
-//     return ".";
-//   } else if (formatstring.includes("/")) {
-//     return "/";
-//   } else if (formatstring.includes("-")) {
-//     return "-";
-//   }
-// }
-
-// // console.log(findSeparator(date2));
-// function format(outputStringFormat = "DD.MM.YYYY") {
-//   const separator = findSeparator(outputStringFormat);
-//   const sliceFormat = outputStringFormat.split(findSeparator(separator));
-
-//   const newDate = sliceFormat.map((el) => {
-//     if (el === "DD") {
-//       return day;
-//     } else if (el === "MM") {
-//       return month;
-//     } else if (el === "YY") {
-//       return year.slice(-2);
-//     } else if (el === "YYYY") {
-//       return year;
-//     } else {
-//       return console.log("wrong format");
-//     }
-//   });
-//   const outputDate = newDate.join(separator);
-//   console.log(outputDate);
-//   return outputDate;
-// }
-// format();
