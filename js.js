@@ -34,17 +34,30 @@ class DatePro {
     );
 
     const arrayDate = sliceFormat.map((el) => {
-      if (el === "DD") {
-        return this.day;
-      } else if (el === "MM") {
-        return this.month;
-      } else if (el === "YY") {
-        return this.year.slice(-2);
-      } else if (el === "YYYY") {
-        return this.year;
-      } else {
-        return console.log("wrong format");
+      switch (el) {
+        case "DD":
+          return this.day;
+        case "MM":
+          return this.month;
+        case "YY":
+          return this.year.slice(-2);
+        case "YYYY":
+          return this.year;
+        default:
+          console.log("wrong format");
       }
+
+      //   if (el === "DD") {
+      //     return this.day;
+      //   } else if (el === "MM") {
+      //     return this.month;
+      //   } else if (el === "YY") {
+      //     return this.year.slice(-2);
+      //   } else if (el === "YYYY") {
+      //     return this.year;
+      //   } else {
+      //     return console.log("wrong format");
+      //   }
     });
 
     const filteredArrayDate = arrayDate.filter(function (x) {
