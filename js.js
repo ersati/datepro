@@ -46,18 +46,6 @@ class DatePro {
         default:
           console.log("wrong format");
       }
-
-      //   if (el === "DD") {
-      //     return this.day;
-      //   } else if (el === "MM") {
-      //     return this.month;
-      //   } else if (el === "YY") {
-      //     return this.year.slice(-2);
-      //   } else if (el === "YYYY") {
-      //     return this.year;
-      //   } else {
-      //     return console.log("wrong format");
-      //   }
     });
 
     const filteredArrayDate = arrayDate.filter(function (x) {
