@@ -26,6 +26,10 @@ class DatePro {
     });
     return sliceDate[idx];
   }
+  regexp(date){
+    
+    console.log(date)
+  }
 
   format(outputStringFormat = "DD.MM.YYYY") {
     const separator = this.searchForSeparator(outputStringFormat);
@@ -73,3 +77,5 @@ const instance3 = new DatePro(date3, formatDate3);
 instance1.format(); // '23.03.2020'
 instance2.format(); // '23.03.2020'
 instance3.format(); // '23.03.2020'
+
+instance1.regexp(date2)
