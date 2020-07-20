@@ -31,6 +31,10 @@ class DatePro {
     console.log(sliceDate);
     return sliceDate[idx];
   }
+  regexp(date){
+    
+    console.log(date)
+  }
 
   format(outputStringFormat = "DD.MM.YYYY") {
     const separator = this.searchForSeparator(outputStringFormat);
@@ -39,16 +43,17 @@ class DatePro {
     );
 
     const arrayDate = sliceFormat.map((el) => {
-      if (el === "DD") {
-        return this.day;
-      } else if (el === "MM") {
-        return this.month;
-      } else if (el === "YY") {
-        return this.year.slice(-2);
-      } else if (el === "YYYY") {
-        return this.year;
-      } else {
-        return console.log("wrong format");
+      switch (el) {
+        case "DD":
+          return this.day;
+        case "MM":
+          return this.month;
+        case "YY":
+          return this.year.slice(-2);
+        case "YYYY":
+          return this.year;
+        default:
+          console.log("wrong format");
       }
     });
 
@@ -77,3 +82,5 @@ const instance3 = new DatePro(date3, formatDate3);
 instance1.format(); // '23.03.2020'
 instance2.format(); // '23.03.2020'
 instance3.format(); // '23.03.2020'
+
+instance1.regexp(date2)
