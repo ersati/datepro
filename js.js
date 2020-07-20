@@ -6,13 +6,17 @@ class DatePro {
   }
 
   searchForSeparator(formatstring) {
-    if (formatstring.includes(".")) {
-      return ".";
-    } else if (formatstring.includes("/")) {
-      return "/";
-    } else if (formatstring.includes("-")) {
-      return "-";
-    }
+    const regex = /[.]|-|[/]/;
+    const separator = regex.exec(formatstring);
+    return separator;
+
+    // if (formatstring.includes(".")) {
+    //   return ".";
+    // } else if (formatstring.includes("/")) {
+    //   return "/";
+    // } else if (formatstring.includes("-")) {
+    //   return "-";
+    // }
   }
 
   splitDate(fulldate, formatdate, char) {
@@ -31,9 +35,8 @@ class DatePro {
     console.log(sliceDate);
     return sliceDate[idx];
   }
-  regexp(date){
-    
-    console.log(date)
+  regexp(date) {
+    console.log(date);
   }
 
   format(outputStringFormat = "DD.MM.YYYY") {
@@ -83,4 +86,4 @@ instance1.format(); // '23.03.2020'
 instance2.format(); // '23.03.2020'
 instance3.format(); // '23.03.2020'
 
-instance1.regexp(date2)
+instance1.regexp(date2);
