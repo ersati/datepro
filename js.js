@@ -9,34 +9,24 @@ class DatePro {
     const regex = /[.]|-|[/]/;
     const separator = regex.exec(formatstring);
     return separator;
-
-    // if (formatstring.includes(".")) {
-    //   return ".";
-    // } else if (formatstring.includes("/")) {
-    //   return "/";
-    // } else if (formatstring.includes("-")) {
-    //   return "-";
-    // }
   }
 
   splitDate(fulldate, formatdate, char) {
-    const sliceDate = fulldate.split(this.searchForSeparator(fulldate));
-    const sliceFormat = formatdate.split(this.searchForSeparator(formatdate));
-    let idx;
-    console.log(fulldate);
-    const newFormat = sliceFormat.forEach((el, index) => {
-      if (el.length != sliceDate[index]) {
-        console.log("ok");
-      }
-      if (el.includes(char)) {
-        return (idx = index);
-      }
-    });
-    console.log(sliceDate);
-    return sliceDate[idx];
-  }
-  regexp(date) {
-    console.log(date);
+    const regexNumber = /^[0-9!@#$&()`.+,/"-]*$/;
+    const isFullDateValid = regexNumber.test(fulldate);
+    if (isFullDateValid) {
+      const sliceDate = fulldate.split(this.searchForSeparator(fulldate));
+      const sliceFormat = formatdate.split(this.searchForSeparator(formatdate));
+      let idx;
+      console.log(fulldate);
+      const newFormat = sliceFormat.forEach((el, index) => {
+        if (el.includes(char)) {
+          return (idx = index);
+        }
+      });
+      console.log(sliceDate);
+      return sliceDate[idx];
+    }
   }
 
   format(outputStringFormat = "DD.MM.YYYY") {
@@ -85,5 +75,3 @@ const instance3 = new DatePro(date3, formatDate3);
 instance1.format(); // '23.03.2020'
 instance2.format(); // '23.03.2020'
 instance3.format(); // '23.03.2020'
-
-instance1.regexp(date2);
