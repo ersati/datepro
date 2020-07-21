@@ -18,15 +18,16 @@ class DatePro {
       const sliceDate = fulldate.split(this.searchForSeparator(fulldate));
       const sliceFormat = formatdate.split(this.searchForSeparator(formatdate));
       let idx;
-      console.log(fulldate);
+      // console.log(fulldate);
       const newFormat = sliceFormat.forEach((el, index) => {
         if (el.includes(char)) {
           return (idx = index);
         }
       });
-      console.log(sliceDate);
+      // console.log(sliceDate);
       return sliceDate[idx];
     }
+    return console.log(`not valid date`);
   }
 
   format(outputStringFormat = "DD.MM.YYYY") {
